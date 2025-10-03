@@ -1,5 +1,4 @@
-import AppContext from "../context/AppContext.tsx";
-import type {Context} from "react";
+
 
 class Darkmode {
 

@@ -1,10 +1,7 @@
-import {useContext} from "react";
-import ContextProvider from "../../context/AppContext.tsx";
 import {Link} from "react-router-dom";
 
 const Home = () => {
-    const context = useContext(ContextProvider)
-    const {state} = context;
+
     return (
         <div className='container flex flex-col mt-5 text-center text-base text-black place-items-center dark:text-white'>
             <h1 className='font-[Minecraft] text-3xl'>Nokorcraft</h1>

@@ -1,5 +1,5 @@
 import {createContext, type Dispatch, type ReactNode, type SetStateAction, useState} from "react";
-import * as React from "react";
+
 type ContextType = {
     state: boolean;
     setState: Dispatch<SetStateAction<boolean>>

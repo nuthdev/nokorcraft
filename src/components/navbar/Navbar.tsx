@@ -1,18 +1,20 @@
 import {Link} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import * as React from "react";
-import Darkmode from "../../utils/Darkmode.tsx";
+
 import darkmode from "../../utils/Darkmode.tsx";
+
 
 const Navbar = () => {
     // mobile links
     const mobileLinks = useRef<HTMLUListElement>(null);
-    const openIcon = useRef<SVGElement>(null)
-    const closeIcon = useRef<SVGElement>(null)
-    const darkIcon = useRef<SVGElement>()
-    const lightIcon = useRef<SVGElement>()
+    const openIcon = useRef<SVGSVGElement>(null)
+    const closeIcon = useRef<SVGSVGElement>(null)
+    const darkIcon = useRef<SVGSVGElement>(null)
+    const lightIcon = useRef<SVGSVGElement>(null)
     const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
+        if (!lightIcon.current || !darkIcon.current) return
         if (darkmode.isInDarkMode()) {
             lightIcon.current.style.display = 'none'
             darkIcon.current.style.display = 'flex'
@@ -24,7 +26,7 @@ const Navbar = () => {
     const toggleMenu = (event: React.MouseEvent<HTMLDivElement>) => {
        event.currentTarget.style.rotate = isOpen ? '0deg' : '90deg'
 
-        if (!mobileLinks.current || !(closeIcon.current || openIcon.current)) return null
+        if (!mobileLinks.current || !closeIcon.current || !openIcon.current) return null
         if (isOpen) {
             mobileLinks.current.style. height= '0'
             openIcon.current.style.display = 'flex'
@@ -39,6 +41,9 @@ const Navbar = () => {
     }
     const toggleDarkMode = (event: React.MouseEvent<HTMLDivElement>) => {
         darkmode.toggle()
+        if (!darkIcon.current || !lightIcon.current) {
+            return;
+        }
         if (darkmode.isInDarkMode()) {
             event.currentTarget.style.rotate = isOpen ? '90deg' : '0deg'
             lightIcon.current.style.display = 'none'
