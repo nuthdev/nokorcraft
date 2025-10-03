@@ -1,0 +1,29 @@
+name: deploy project
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5.0.0
+        with:
+          node-version: '20'
+      - name: install and buikd
+        run: |
+          npm install
+          npm run build
+
+      - name: deploy vai ftp
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.nokorcraft.net
+          port: 21
+          username: nangmc@nokorcraft.net
+          password: Klqb(*&D!#eJ#ucP
+          local-dir: dist/
+          server-dir: /
