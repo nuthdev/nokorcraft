@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v5.0.0
         with:
           node-version: '20'
-      - name: install and buikd
+      - name: install and build
         run: |
           npm install
           npm run build
