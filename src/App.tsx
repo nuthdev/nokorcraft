@@ -3,6 +3,7 @@ import AppRouter from "./router/AppRouter.tsx";
 import {useEffect} from "react";
 import './App.css'
 const App = () => {
+
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
