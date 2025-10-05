@@ -10,7 +10,7 @@ const AppContext = createContext<ContextType | null>(null)
 
 export const AppContextProvider = ({children} : {children: ReactNode}) => {
     const [state, setState] = useState(false)
-    const [searchKeyword, setSearchKeyword] = useState("hero")
+    const [searchKeyword, setSearchKeyword] = useState("")
     return (
         <AppContext.Provider value={{state, setState, searchKeyword, setSearchKeyword}}>
             {children}
