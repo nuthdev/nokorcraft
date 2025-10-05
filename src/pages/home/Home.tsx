@@ -1,10 +1,15 @@
 import {Link} from "react-router-dom";
 import Configuation from "../../utils/Configuation.ts";
+import RankCard from "../../components/card/RankCard.tsx";
 
 
 
 const Home = () => {
     const config = Configuation.getInstance()
+    const cards = []
+    for (let i = 0; i < 4; i++) {
+        cards.push(<RankCard id={1} customClass={'fade-up'}/>)
+    }
     return (
         <div className='flex flex-col m-0  text-center text-base gap-10 text-black place-items-center dark:text-white'>
             <h1 className='font-[Minecraft] text-3xl'>Nokorcraft</h1>
@@ -21,7 +26,7 @@ const Home = () => {
                 </section>
                 <div className='bg-black/25 py-3 flex w-full justify-center'>
                     <div className='grid gap-10 grid-cols-2 w-[90%] place-items-center md:grid-cols-3 lg:grid-cols-4'>
-
+                        {cards}
                     </div>
                 </div>
             </div>
