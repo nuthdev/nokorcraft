@@ -1,3 +1,4 @@
+
 const ranks = [
     {
         id: 1,
@@ -6,6 +7,16 @@ const ranks = [
     },
     {
         id: 2,
+        name: 'legend',
+        keyword: ['legend', 'legends']
+    },
+    {
+        id: 3,
+        name: 'legend',
+        keyword: ['legend', 'legends']
+    },
+    {
+        id: 4,
         name: 'legend',
         keyword: ['legend', 'legends']
     }

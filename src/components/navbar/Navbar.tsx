@@ -28,12 +28,12 @@ const Navbar = () => {
 
         if (!mobileLinks.current || !closeIcon.current || !openIcon.current) return null
         if (isOpen) {
-            mobileLinks.current.style. height= '0'
+            mobileLinks.current.style.maxHeight = '0'
             openIcon.current.style.display = 'flex'
             closeIcon.current.style.display = 'none'
             setIsOpen(false)
         } else {
-            mobileLinks.current.style.height = '1000px'
+            mobileLinks.current.style.maxHeight = '1000px'
             openIcon.current.style.display = 'none'
             closeIcon.current.style.display = 'flex'
             setIsOpen(true)
@@ -56,7 +56,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="sticky top-0 z-50 flex items-center w-full bg-neutral-900/60 h-12 text-red-600 justify-between overflow-visible ">
+        <nav className="sticky top-0 z-50 flex items-center w-full bg-neutral-900/60 h-12 text-red-600 justify-between overflow-visibl">
             <Link to='/' className='flex h-full gap-2'>
                 <img src='/logo.svg' alt='logo' className='h-full rounded-full box-border p-1'/>
                 <span className='flex items-center'>Nokorcraft</span>
@@ -80,9 +80,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-
-
-            <ul ref={mobileLinks} className='lg:hidden absolute top-full text-white w-full h-0 max-h-max text-center  overflow-hidden bg-neutral-900/80 *:cursor-pointer *:py-3 transition-all duration-200'>
+            <ul ref={mobileLinks} style={{maxHeight: '0'}} className='lg:hidden absolute top-full text-white w-full h-max text-center flex flex-col overflow-hidden bg-neutral-900/80 *:cursor-pointer *:py-3 transition-all duration-200'>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='store'>Store</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>

@@ -9,22 +9,29 @@ import ContextProvider from "../../context/AppContext.tsx";
 const Store = () => {
     const [keyword, setKeyword] = useState("");
     const context = useContext(ContextProvider);
-    const [first, setFirstOpen] = useState<boolean>(true);
+    const [firstOpen, setFirstOpen] = useState<boolean>(true);
     const container = useRef<HTMLDivElement>(null);
     const [customClass, setCustomClass] = useState('fade-up')
     const searchKeyword = context?.searchKeyword || ''
-    console.log(first)
     useEffect(() => {
         setKeyword(searchKeyword)
-        setFirstOpen((prev) => {
-            if (prev) {
-                setCustomClass('fade-up')
-                return false;
-            } else {
-                setCustomClass('')
-                return prev;
-            }
-        })
+        // setFirstOpen((prev) => {
+        //     if (prev) {
+        //         setCustomClass('fade-up')
+        //         console.log('yoo')
+        //         return false;
+        //     } else {
+        //         setCustomClass('')
+        //         console.log('no')
+        //         return false;
+        //     }
+        // })
+        if (firstOpen) {
+            setCustomClass('fade-up');
+            setFirstOpen(false);
+        } else {
+            setCustomClass('');
+        }
 
     }, [searchKeyword])
 
@@ -34,8 +41,11 @@ const Store = () => {
             <h1 className='text-4xl font-[Minecraft] text-red-400 text-center'>Store</h1>
             <div className='flex justify-center items'>
                 <div ref={container} className='container max-w-[1000px] place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
-                    {getRanks().map((rank) => (
+                    {keyword !== '' && getRanks().map((rank) => (
                         rank.keyword.includes(keyword) && <RankCard id={rank.id} key={rank.id} customClass={customClass}/>
+                    ))}
+                    {keyword == '' && getRanks().map((rank) => (
+                        <RankCard id={rank.id} key={rank.id} customClass={customClass}/>
                     ))}
                 </div>
             </div>

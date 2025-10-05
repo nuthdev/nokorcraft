@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 
-const RankCard = ({id = 1, customClass} : {id: number, customClass: string}) => {
+const RankCard = ({id = 1, customClass = ''} : {id: number, customClass: string}) => {
+    console.log('hey', customClass)
     return (
             <div className={`${customClass} flex flex-col bg-[#edf2f4]  dark:bg-neutral-700 dark:text-white text-black w-[90%] h-60 relative px-2 pt-5 rounded hover:border-red-600 hover:border-2`}>
             <div className='flex items-center flex-col'>
