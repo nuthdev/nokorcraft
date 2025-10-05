@@ -3,15 +3,18 @@ import {createContext, type Dispatch, type ReactNode, type SetStateAction, useSt
 type ContextType = {
     state: boolean;
     setState: Dispatch<SetStateAction<boolean>>
+    searchKeyword: string,
+    setSearchKeyword: Dispatch<SetStateAction<string>>
 }
-const ContextProvider = createContext<ContextType | null>(null);
+const AppContext = createContext<ContextType | null>(null)
 
-export const AppContext = ({children} : {children: ReactNode}) => {
+export const AppContextProvider = ({children} : {children: ReactNode}) => {
     const [state, setState] = useState(false)
+    const [searchKeyword, setSearchKeyword] = useState("hero")
     return (
-        <ContextProvider.Provider value={{state, setState}}>
+        <AppContext.Provider value={{state, setState, searchKeyword, setSearchKeyword}}>
             {children}
-        </ContextProvider.Provider>
+        </AppContext.Provider>
     )
 }
-export  default ContextProvider
+export default AppContext

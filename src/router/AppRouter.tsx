@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "../pages/Layout.tsx";
 import Home from "../pages/home/Home.tsx";
-import Configuation from "../utils/Configuation.tsx";
+import Configuation from "../utils/Configuation.ts";
 import Store from "../pages/store/Store.tsx";
 
 const AppRouter = () => {

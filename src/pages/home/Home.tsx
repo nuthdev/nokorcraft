@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-import Configuation from "../../utils/Configuation.tsx";
-import RankCard from "../../components/card/RankCard.tsx";
+import Configuation from "../../utils/Configuation.ts";
+
 
 
 const Home = () => {
@@ -21,10 +21,7 @@ const Home = () => {
                 </section>
                 <div className='bg-black/25 py-3 flex w-full justify-center'>
                     <div className='grid gap-10 grid-cols-2 w-[90%] place-items-center md:grid-cols-3 lg:grid-cols-4'>
-                        <RankCard/>
-                        <RankCard/>
-                        <RankCard/>
-                        <RankCard/>
+
                     </div>
                 </div>
             </div>
