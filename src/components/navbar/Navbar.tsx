@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import { useEffect, useRef, useState} from "react";
 import * as React from "react";
 
@@ -6,8 +6,8 @@ import darkmode from "../../utils/Darkmode.tsx";
 
 
 const Navbar = () => {
-    // mobile links
-    const mobileLinks = useRef<HTMLUListElement>(null);
+    // mobile NavLinks
+    const mobileNavLinks = useRef<HTMLUListElement>(null);
     const openIcon = useRef<SVGSVGElement>(null)
     const closeIcon = useRef<SVGSVGElement>(null)
     const darkIcon = useRef<SVGSVGElement>(null)
@@ -23,17 +23,18 @@ const Navbar = () => {
             darkIcon.current.style.display = 'none'
         }
     }, [])
+    const styleData = ['w-full', 'w-full', 'py-3']
     const toggleMenu = (event: React.MouseEvent<HTMLDivElement>) => {
        event.currentTarget.style.rotate = isOpen ? '0deg' : '90deg'
 
-        if (!mobileLinks.current || !closeIcon.current || !openIcon.current) return null
+        if (!mobileNavLinks.current || !closeIcon.current || !openIcon.current) return null
         if (isOpen) {
-            mobileLinks.current.style.maxHeight = '0'
+            mobileNavLinks.current.style.maxHeight = '0'
             openIcon.current.style.display = 'flex'
             closeIcon.current.style.display = 'none'
             setIsOpen(false)
         } else {
-            mobileLinks.current.style.maxHeight = '1000px'
+            mobileNavLinks.current.style.maxHeight = '1000px'
             openIcon.current.style.display = 'none'
             closeIcon.current.style.display = 'flex'
             setIsOpen(true)
@@ -57,15 +58,15 @@ const Navbar = () => {
 
     return (
         <nav className="sticky top-0 z-50 flex items-center w-full bg-neutral-900/60 h-12 text-red-600 justify-between overflow-visibl">
-            <Link to='/' className='flex h-full gap-2'>
+            <NavLink to='/' className='flex h-full gap-2'>
                 <img src='/logo.svg' alt='logo' className='h-full rounded-full box-border p-1'/>
                 <span className='flex items-center'>Nokorcraft</span>
-            </Link>
+            </NavLink>
             <div className='flex mr-3.5 gap-5'>
                 <ul className='gap-2 hidden lg:flex'>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='store'>Store</Link></li>
-                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='store'>Store</NavLink></li>
+                    <li><NavLink to='/contact'>Contact</NavLink></li>
                 </ul>
                 <div className='flex gap-2 relative'>
                     <div onClick={toggleDarkMode} className='transition-all relative'>
@@ -80,10 +81,26 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <ul ref={mobileLinks} style={{maxHeight: '0'}} className='lg:hidden absolute top-full text-white w-full h-max text-center flex flex-col overflow-hidden bg-neutral-900/80 *:cursor-pointer *:py-3 transition-all duration-200'>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='store'>Store</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
+            <ul ref={mobileNavLinks} style={{maxHeight: '0'}} className='lg:hidden absolute top-full text-white w-full h-max text-center flex flex-col overflow-hidden bg-neutral-900/80 *:cursor-pointer *:flex transition-all duration-200'>
+                <li><NavLink
+                    className={({isActive}) => {
+                        const active =  isActive ? 'bg-red-600' : ''
+                        const style = [...styleData, active]
+                        return style.join(' ')
+                    }}
+                    to='/'>Home</NavLink></li>
+                <li><NavLink to='store'
+                className={({isActive}) => {
+                    const active = isActive ? 'bg-red-600' : ''
+                    const style = [...styleData, active]
+                    return style.join(' ')
+                }}>Store</NavLink></li>
+                <li><NavLink to='/contact'
+                className={({isActive}) => {
+                    const active = isActive ? 'bg-red-600' : ''
+                    let style = [...styleData, active]
+                    return style.join(' ')
+                }}>Contact</NavLink></li>
             </ul>
         </nav>
     )
