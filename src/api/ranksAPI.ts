@@ -18,7 +18,7 @@ const ranks = [
     {
         id: 4,
         name: 'warrior',
-        keyword: ['legend', 'legends']
+        keyword: ['legend', 'warrior']
     }
 ]
 export type rankType = {
