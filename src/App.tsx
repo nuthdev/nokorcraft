@@ -18,7 +18,7 @@ const App = () => {
     //     const elements = document.querySelectorAll('.box')
     //     elements.forEach(ep => observer.observe(ep))
     // }, [location])
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    // console.log(window.matchMedia("(prefers-color-scheme: dark)").matches);
     if (localStorage.getItem('darkMode') == 'true') {
         document.documentElement.classList.add('dark');
     } else {

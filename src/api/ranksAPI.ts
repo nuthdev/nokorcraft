@@ -3,7 +3,7 @@ const ranks = [
     {
         id: 1,
         name: 'hero',
-        keyword: ['hero', 'heros']
+        keyword: ['hero', 'heroes']
     },
     {
         id: 2,
@@ -12,17 +12,22 @@ const ranks = [
     },
     {
         id: 3,
-        name: 'legend',
-        keyword: ['legend', 'legends']
+        name: 'epic',
+        keyword: ['epic', 'legends']
     },
     {
         id: 4,
-        name: 'legend',
+        name: 'warrior',
         keyword: ['legend', 'legends']
     }
 ]
-type rankType = typeof ranks
-const getRanks = (): rankType => {
+export type rankType = {
+    id: number;
+    name: string;
+    keyword: string[];
+}
+function getRanks (): rankType[] {
     return ranks;
 }
-export {getRanks}
+
+export {getRanks};

@@ -5,7 +5,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <div className='bg-white dark:bg-stone-950 text-red-600 py-2 font-mono '>
+                <div className='bg-white dark:bg-stone-950 text-red-600 py-2 font-mono'>
                 <h1 className='text-2xl text-center'>NokorCraft</h1>
                 <div className='*:*:my-1 gap-10 text-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                     <ul>

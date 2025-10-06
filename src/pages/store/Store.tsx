@@ -3,6 +3,7 @@ import RankCard from "../../components/card/RankCard.tsx";
 import {getRanks} from "../../api/ranksAPI.ts";
 import {useContext, useEffect, useRef, useState} from "react";
 import ContextProvider from "../../context/AppContext.tsx";
+import {search} from "../../utils/Helper.ts";
 
 
 
@@ -15,17 +16,6 @@ const Store = () => {
     const searchKeyword = context?.searchKeyword || ''
     useEffect(() => {
         setKeyword(searchKeyword)
-        // setFirstOpen((prev) => {
-        //     if (prev) {
-        //         setCustomClass('fade-up')
-        //         console.log('yoo')
-        //         return false;
-        //     } else {
-        //         setCustomClass('')
-        //         console.log('no')
-        //         return false;
-        //     }
-        // })
         if (firstOpen) {
             setCustomClass('fade-up');
             setFirstOpen(false);
@@ -33,7 +23,7 @@ const Store = () => {
             setCustomClass('');
         }
 
-    }, [searchKeyword])
+    }, [searchKeyword]);
 
     return (
         <div className='flex flex-col gap-10'>
@@ -41,8 +31,8 @@ const Store = () => {
             <h1 className='text-4xl font-[Minecraft] text-red-400 text-center'>Store</h1>
             <div className='flex justify-center items'>
                 <div ref={container} className='container max-w-[1000px] place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
-                    {keyword !== '' && getRanks().map((rank) => (
-                        rank.keyword.includes(keyword) && <RankCard id={rank.id} key={rank.id} customClass={customClass}/>
+                    {keyword !== '' && search(keyword).map((key) => (
+                        <RankCard key={key} id={key} customClass={customClass}/>
                     ))}
                     {keyword == '' && getRanks().map((rank) => (
                         <RankCard id={rank.id} key={rank.id} customClass={customClass}/>

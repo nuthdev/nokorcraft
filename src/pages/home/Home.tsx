@@ -8,7 +8,7 @@ const Home = () => {
     const config = Configuation.getInstance()
     const cards = []
     for (let i = 0; i < 4; i++) {
-        cards.push(<RankCard id={1} customClass={'fade-up'}/>)
+        cards.push(<RankCard id={i} key={i} customClass={'fade-up'}/>)
     }
     return (
         <div className='flex flex-col m-0  text-center text-base gap-10 text-black place-items-center dark:text-white'>
