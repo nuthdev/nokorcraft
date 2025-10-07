@@ -2,6 +2,8 @@
   "name": "Nokorcraft",
   "ip": "play.nokorcraft.net",
   "port_bedrock": "19132",
+  "version": "1.21.4.",
+  "server-type": "Survival",
   "home": {
     "path": "/",
     "contents": [

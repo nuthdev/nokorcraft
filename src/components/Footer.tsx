@@ -1,41 +1,53 @@
 import {Component} from "react";
-import {Link} from "react-router-dom";
+
+import Configuation from "../utils/Configuation";
 
 class Footer extends Component {
-
     render() {
-        return (
-                <div className='bg-white dark:bg-stone-950 text-red-600 py-2 font-mono'>
-                <h1 className='text-2xl text-center'>NokorCraft</h1>
-                <div className='*:*:my-1 gap-10 text-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-                    <ul>
-                        <h3 className=' text-2xl my-4'>Info</h3>
-                        <li><Link to='/'>Nokorcraft info</Link></li>
-                        <li><Link to=''>Rules</Link></li>
-                        <li><Link to='/'>Store</Link></li>
-                    </ul>
-                    <ul>
-                        <h3 className=' text-2xl my-4'>Info</h3>
-                        <li><Link to='/'>Nokorcraft info</Link></li>
-                        <li><Link to=''>Rules</Link></li>
-                        <li><Link to='/'>Store</Link></li>
-                    </ul>
-                    <ul>
-                        <h3 className=' text-2xl my-4'>Info</h3>
-                        <li><Link to='/'>Nokorcraft info</Link></li>
-                        <li><Link to=''>Rules</Link></li>
-                        <li><Link to='/'>Store</Link></li>
-                    </ul>
-                    <ul>
-                        <h3 className=' text-2xl my-4'>Info</h3>
-                        <li><Link to='/'>Nokorcraft info</Link></li>
-                        <li><Link to=''>Rules</Link></li>
-                        <li><Link to='/'>Store</Link></li>
-                    </ul>
+        const config = Configuation.getInstance()
+        return (<footer className='flex flex-col px-2 py-4'>
+            <div className="grid lg:grid-cols-4">
+                <header  className="flex flex-col gap-10">
+                <div className="flex">
+                    <section><img src="/logo.svg" alt="logo" width='50px' className="rounded-xl" /></section>
+                    <section className='bg-clip-text text-4xl bg-gradient-to-r from-5% from-emerald-600 to-100% to-blue-400 font-black text-transparent'>Nokorcraft</section>
                 </div>
-                <p className='text-center flex justify-center items-center'><svg className=' fill-red-500' xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"><path d="M393-320h173q14 0 20.5-9.5T593-353v-73h-60v46H426v-200h107v47h60v-73q0-14-6.5-24T566-640H393q-14 0-20.5 10t-6.5 24v253q0 14 6.5 23.5T393-320Zm87 240q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z"/></svg> Copyright Nokorcraft {new Date().getFullYear()} All Rights Reserved</p>
+                <div>
+                    <p className="text-xl text-black/50">The ultimate Minecraft experience in Cambodia with custom features, amazing community, and endless adventures.</p>
+                </div>
+            </header>
+            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+                <h4 className="font-bold">Server Info</h4>
+                <li className="flex justify-between">
+                    <ul>version</ul>
+                    <ul>{config.get('version')}</ul>
+                </li>
+                <li className="flex justify-between">
+                    <ul>Type</ul>
+                    <ul>{config.get('server-type')}</ul>
+                </li>
             </div>
-        );
+            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+                <h4 className="font-semibold text-emerald-300">Quick Links</h4>
+                <li className="space-y-2 *:hover:text-emerald-500 *:transition-colors *:cursor-pointer list-none">
+                    <ul>Rules</ul>
+                    <ul>Community</ul>
+                    <ul>Support</ul>
+                    <ul>Staff Team</ul>
+                </li>
+            </div>
+            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+                <h4 className="font-semibold text-emerald-300">Community</h4>
+                <li className="space-y-2 *:hover:text-emerald-500 *:transition-colors *:cursor-pointer list-none">
+                    <ul>Discord Server</ul>
+                    <ul>Youtube channel</ul>
+                    <ul>Twitte/X</ul>
+                    <ul>Facebook page</ul>
+                </li>
+            </div>
+            </div>
+            <p className="text-xl text-center">© {new Date().getFullYear()} <span className="text-red-600 font-semibold">Nokorcraft</span> All Right Reserved</p>
+        </footer>)
     }
 }
 export default Footer
