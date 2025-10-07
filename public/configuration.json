@@ -1,5 +1,7 @@
 {
   "name": "Nokorcraft",
+  "ip": "play.nokorcraft.net",
+  "port_bedrock": "19132",
   "home": {
     "path": "/",
     "contents": [
