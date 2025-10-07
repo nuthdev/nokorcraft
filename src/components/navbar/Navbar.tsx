@@ -57,7 +57,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="sticky top-0 z-50 flex items-center w-full dark:bg-white/20 backdrop-blur-md bg-black/20 h-15 pl-2 lg:pr-20 text-red-600 justify-between overflow-visibl">
+        <nav className="fixed top-0 z-50 flex items-center w-full dark:bg-white/20 backdrop-blur-md bg-black/20 h-15 pl-2 lg:pr-20 text-red-600 justify-between overflow-visible">
             <NavLink to='/' className='flex h-full gap-2'>
                 <img src='/logo.svg' alt='logo' className='h-full rounded-full box-border p-1'/>
                 <div className='flex flex-col justify-center text-[1rem]'>
@@ -94,8 +94,8 @@ const Navbar = () => {
                 <button className='bg-red-500 text-white font-bold py-1 px-3 rounded'>Join Community</button>
             </div>
 
-            <ul ref={mobileNavLinks} style={{maxHeight: '0'}} className=' lg:hidden fixed text-black w-full h-max top-full text-center flex flex-col overflow-hidden bg-white/50 *:cursor-pointer *:flex transition-all duration-200'>
-                <li className=' backdrop-blur-2xl'><NavLink
+            <ul ref={mobileNavLinks} style={{maxHeight: '0'}} className='left-0 lg:hidden fixed text-black w-full h-max top-full text-center flex flex-col overflow-hidden bg-white/50 *:cursor-pointer *:flex transition-all duration-200'>
+                <li className=' backdrop-blur-2xl overflow-hidden'><NavLink
                     className={({isActive}) => {
                         const active =  isActive ? 'bg-red-600' : ''
                         const style = [...styleData, active]

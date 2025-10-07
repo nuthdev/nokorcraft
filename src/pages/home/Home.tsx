@@ -21,7 +21,7 @@ const Home = () => {
             {/*    <Link to='/' className='bg-green-600 col-span-2 lg:col-span-1 fade-up'>Become a content creator</Link>*/}
             {/*</section>*/}
             <div className='relative h-[100vh] py-20 w-full order-[-1] overflow-hidden'>
-                <div className='absolute inset-0 overflow-hidden'>
+                <div className='absolute inset-0 overflow-hidden '>
                     <img className='absolute inset-0 w-full h-full object-cover scale-110 transform' src='/banner.webp' alt='banner'/>
                     <div className='absolute inset-0 bg-white/80'></div>
                     <div className='absolute inset-0 bg-gradient-to-r from-red-500/10 from-20% dark:from-black/90 to-rose-200/90 dark:to-rose-300/90'/>
@@ -33,7 +33,7 @@ const Home = () => {
                         <div className='flex flex-col'>
                             <h1 className='text-7xl lg:text-9xl font-bold text-red-400 animate-pulse bg-gradient-to-r from-red-700 via-rose-500 bg-clip-text text-center'>Nokorcraft</h1>
                             <p className='text-xl text-center font-mono text-red-600 mb-4'>SURVIVAL.CREATIVE.ADVENTURE</p>
-                            <p className='text-xl'>Experience the ultimate Minecraft adventure in Cambodia's premier server.<span className='text-red-600 font-bold'> Build, explore, and survive</span> with our amazing community of players. Custom features, events, and endless possibilities awai</p>
+                            <p className='text-xl opacity-60'>Experience the ultimate Minecraft adventure in Cambodia's premier server.<span className='text-red-600 font-bold'> Build, explore, and survive</span> with our amazing community of players. Custom features, events, and endless possibilities awai</p>
                         </div>
                         <div className='flex flex-col justify-center items-center gap-2 '>
                             <button className='select-text border px-6 py-2 rounded bg-red-500 text-white font-bold transition-all hover:bg-red-600 hover:scale-110 z-[505]'>Join now - {config.get('ip')}</button>
