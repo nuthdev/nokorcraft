@@ -8,7 +8,7 @@ const Card = ({title, classes, image, icon}: {title: string, classes: string, im
             </header>
             <div className='flex flex-col text-start gap-5'>
                 <h3>{title}</h3>
-                <p className='text-black/60 text-xl' >Classic survival gameplay with custom enhancements, economy system, and player shops. Build your empire from scratch.</p>
+                <p className='text-inherit/60 text-xl' >Classic survival gameplay with custom enhancements, economy system, and player shops. Build your empire from scratch.</p>
             </div>
             <footer className=' *:bg-rose-500/40 font-mono text-rose-500 *:text-base *:p-2 p-2 *:rounded-xl'><span>Ecoonomy</span> <span>Shop</span> <span>Claims</span></footer>
         </div>

@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 
-@custom-variant dark (&:where(.darks, .darks *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 .backdrop-blur-2xl {
     -webkit-backdrop-filter: blur(24px);

@@ -5,18 +5,18 @@ import Configuation from "../utils/Configuation";
 class Footer extends Component {
     render() {
         const config = Configuation.getInstance()
-        return (<footer className='flex flex-col px-2 py-4'>
-            <div className="grid lg:grid-cols-4">
+        return (<footer className='flex flex-col px-2 py-4 text-black dark:text-white'>
+            <div className="grid lg:grid-cols-4 space-y-10">
                 <header  className="flex flex-col gap-10">
                 <div className="flex">
                     <section><img src="/logo.svg" alt="logo" width='50px' className="rounded-xl" /></section>
                     <section className='bg-clip-text text-4xl bg-gradient-to-r from-5% from-emerald-600 to-100% to-blue-400 font-black text-transparent'>Nokorcraft</section>
                 </div>
                 <div>
-                    <p className="text-xl text-black/50">The ultimate Minecraft experience in Cambodia with custom features, amazing community, and endless adventures.</p>
+                    <p className="text-xl text-inherit/50">The ultimate Minecraft experience in Cambodia with custom features, amazing community, and endless adventures.</p>
                 </div>
             </header>
-            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+            <div className="space-y-3 text-lg text-inherit/45 lg:p-3">
                 <h4 className="font-bold">Server Info</h4>
                 <li className="flex justify-between">
                     <ul>version</ul>
@@ -27,7 +27,7 @@ class Footer extends Component {
                     <ul>{config.get('server-type')}</ul>
                 </li>
             </div>
-            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+            <div className="space-y-3 text-lg text-imherit/45 lg:p-3">
                 <h4 className="font-semibold text-emerald-300">Quick Links</h4>
                 <li className="space-y-2 *:hover:text-emerald-500 *:transition-colors *:cursor-pointer list-none">
                     <ul>Rules</ul>
@@ -36,7 +36,7 @@ class Footer extends Component {
                     <ul>Staff Team</ul>
                 </li>
             </div>
-            <div className="space-y-3 text-lg text-black/45 lg:p-3">
+            <div className="space-y-3 text-lg text-inherit/45 lg:p-3">
                 <h4 className="font-semibold text-emerald-300">Community</h4>
                 <li className="space-y-2 *:hover:text-emerald-500 *:transition-colors *:cursor-pointer list-none">
                     <ul>Discord Server</ul>
