@@ -5,7 +5,7 @@ import Configuation from "../utils/Configuation";
 class Footer extends Component {
     render() {
         const config = Configuation.getInstance()
-        return (<footer className='flex flex-col px-0 overflow-scroll py-4 text-black dark:text-white'>
+        return (<footer className='flex flex-col px-0 py-4 text-black dark:text-white box-border px-3'>
             <div className="grid lg:grid-cols-4 space-y-10">
                 <header  className="flex flex-col gap-10">
                 <div className="flex">
