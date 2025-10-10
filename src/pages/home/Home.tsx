@@ -12,7 +12,7 @@ const Home = () => {
         cards.push(<RankCard id={i} key={i} customClass={'fade-up'}/>)
     }
     return (
-        <div className=' flex flex-col m-0  text-center text-base gap-10 text-black place-items-center dark:text-white'>
+        <div className=' flex flex-col m-0 w-full text-center text-base gap-10 text-black place-items-center dark:text-white'>
             {/*<h1 className='font-[Minecraft] text-3xl'>Nokorcraft</h1>*/}
             {/*<p className=''>{config.get('home')['contents'][0]}</p>*/}
             {/*<section className='grid grid-cols-2 gap-2 w-[90%] box-border mt-7 *:h-10 *:rounded *:w-full *:flex *:justify-center *:items-center lg:grid-cols-3 text-white max-w-200'>*/}
@@ -20,7 +20,7 @@ const Home = () => {
             {/*    <Link to='/' className='bg-blue-600 fade-up'>Rule</Link>*/}
             {/*    <Link to='/' className='bg-green-600 col-span-2 lg:col-span-1 fade-up'>Become a content creator</Link>*/}
             {/*</section>*/}
-            <div className='relative h-[100vh] py-20 w-full order-[-1] overflow-hidden'>
+            <div className='relative h-[100vh] py-20 w-screen order-[-1] overflow-hidden'>
                 <div className='absolute inset-0 overflow-hidden '>
                     <img className='absolute inset-0 w-full h-full object-cover scale-110 transform' src='/banner.webp' alt='banner'/>
                     <div className='absolute inset-0 bg-white/80'></div>

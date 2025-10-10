@@ -5,7 +5,5 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-.backdrop-blur-2xl {
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
-}
+
+@custom-variant shadows (&:has(:hover));

@@ -30,7 +30,7 @@ const Store = () => {
             <StoreNav/>
             <h1 className='text-4xl font-[Minecraft] text-red-400 text-center'>Store</h1>
             <div className='flex justify-center items'>
-                <div ref={container} className='container max-w-[1000px] place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
+                <div ref={container} className='container max-w-[1000px] place-items-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-10'>
                     {keyword !== '' && search(keyword).map((key) => (
                         <RankCard key={key} id={key} customClass={customClass}/>
                     ))}

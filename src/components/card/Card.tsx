@@ -1,6 +1,6 @@
 const Card = ({title, classes, image, icon}: {title: string, classes: string, image: string, icon: any}) => {
     return (
-        <div className={`${classes} flex flex-col hover:scale-110 transition-all hover:text-red-300 bg-black/5 pb-4`}>
+        <div className={`${classes} flex flex-col hover:scale-110 transition-all hover:text-red-300 bg-black/5 dark:bg-amber-50/10 pb-4`}>
             <header className='w-full max-h-50 relative overflow-hidden'>
                 <img src={image} alt="banner" className="object-cover select-none a"/>
                 <div className='absolute inset-0 bg-gradient-to-t from-white/60 '></div>

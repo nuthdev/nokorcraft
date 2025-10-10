@@ -57,7 +57,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-0 z-50 flex items-center w-full dark:bg-white/20 backdrop-blur-md bg-black/20 h-15 pl-2 lg:pr-20 text-red-600 justify-between overflow-visible">
+        <nav className="sticky top-0 z-50 flex items-center w-full backdrop-blur-md dark:bg-none border-b dark:border-white/30 border-black/30 dark:shadow-white h-15 pl-2 lg:pr-20 text-red-600 justify-between overflow-visible">
             <NavLink to='/' className='flex h-full gap-2'>
                 <img src='/logo.svg' alt='logo' className='h-full rounded-full box-border p-1'/>
                 <div className='flex flex-col justify-center text-[1rem]'>
